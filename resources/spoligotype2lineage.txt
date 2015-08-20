@@ -1,0 +1,135 @@
+## Not included due to ambiguity
+#ZERO	LIN-A
+# AFRI could be 5 or 6
+
+
+# Build according to http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3600895/
+# East-African-Indian
+EAI1-SOM	LIN-1
+EAI2	LIN-1
+EAI2-Manilla	LIN-1
+EAI2-nonthaburi	LIN-1
+EAI3-IND	LIN-1
+EAI4-VNM	LIN-1
+EAI5	LIN-1
+EAI6-BGD1	LIN-1
+EAI8-MDG	LIN-1
+
+## 'Ancestral' 
+MANU_ancestor	LIN-2
+Manu_ancestor	LIN-2
+MANU3	LIN-2
+MANU2	LIN-2
+
+
+# East-Asian / Beijing
+Beijing	LIN-2
+
+
+# East-African-Indian
+# Occurs in many lineages, unconfirmed CAS	LIN-3
+CAS1-Delhi	LIN-3
+CAS1-Kili	LIN-3
+CAS2	LIN-3
+#CAS	LIN-3
+
+# Euro-American
+T	LIN-4
+T1	LIN-4
+T1-RUS2	LIN-4
+T2	LIN-4
+T2-uganda	LIN-4
+T3	LIN-4
+T3-ETH	LIN-4
+T4	LIN-4
+T5	LIN-4
+T5-RUS1	LIN-4
+T5-Madrid	LIN-4
+T5-Madrid2	LIN-4
+H	LIN-4
+H1	LIN-4
+H2	LIN-4
+H3	LIN-4
+H37Rv	LIN-4
+H4	LIN-4
+X	LIN-4
+X1	LIN-4
+X2	LIN-4
+X3	LIN-4
+LAM	LIN-4
+LAM1	LIN-4
+LAM2	LIN-4
+LAM3	LIN-4
+LAM4	LIN-4
+LAM5	LIN-4
+LAM6	LIN-4
+LAM7	LIN-4
+LAM7-TUR	LIN-4
+LAM8	LIN-4
+LAM9	LIN-4
+LAM10-CAM	LIN-4
+LAM11-ZWE	LIN-4
+S	LIN-4
+
+
+#
+# West African I == AFRI_2 == Lineage 5(Gehre et al. 2013)
+# West African II == AFRI_1 == Lineage 6 (Gehre et al. 2013)
+#
+# Comment on paper: Reduced Transmissibility of East African Indian Strains of Mycobacterium tuberculosis
+# 
+#  Amr S. Albanna, Michael B. Reed, Kimberley V. Kotar, Ashley Fallow, Fiona A. McIntosh, Marcel A. Behr, Dick Menzies
+#  PLOS ONE
+# 
+# 
+# Summary of different methods of classifying Mycobacterium tuberculosis lineages:
+# 
+# LSPs Gagneux et al [1] Brudey et al [3] Comas et al [4]
+# a) Ancestral (TbD1+)
+# RD 239 Indo-Oceanic East African-Indian Lineage 1
+# 
+# RD 711 West African I AFRI2 Lineage 5
+# 
+# RD 702 West African II AFRI1 Lineage 6
+# b) Modern (TbD1-)
+# RD 105 East Asian Beijing Lineage 2
+# 
+# RD 750 East African-Indian Central Asian (CAS) Lineage 3
+# 
+# Pks 1-15 Euro-American LAM Lineage 4: Cameroon, S, Uganda, T,X, Haarlem
+# 
+# Amr AlBanna, Marcel Behr, Michael Reed, Dick Menzies
+# 
+# References:
+# 1- Gagneux S, DeRiemer K, Van T, Kato-Maeda M, de Jong BC, et al. (2006) Variable host-pathogen compatibility in Mycobacterium tuberculosis. Proc Natl Acad Sci USA 103: 537-44.
+# 2- Thomas SK, Iravatham CC, Moni BH, Kumar A, Archana BV,et al. (2011) Modern and Ancestral Genotypes of Mycobacterium tuberculosis from Andhra Pradesh, India. PLoS One 6(11):e27584. Epub 2011 Nov 17.
+# 3- Brudey K, Driscoll JR, Rigouts L, Prodinger WM, Gori A,et al. (2006) Mycobacterium tuberculosis complex genetic diversity: mining the fourth international spoligotyping database (SpolDB4) for classification, population genetics and epidemiology. BMC Microbiol 6:23.
+# 4- Comas I, Homolka S, Niemann S, Gagneux S (2009) Genotyping of Genetically Monomorphic Bacteria: DNA Sequencing in Mycobacterium tuberculosis Highlights the Limitations of Current Methodologies. PLoS ONE 4(11): e7815. 
+
+
+# West-African 1
+AFRI_2	LIN-5
+AFRI_3	LIN-5
+
+
+# West-African 2
+AFRI_1	LIN-6
+
+
+# Deep branching lineages from Horn of Africa
+## Blouin 2012
+## Comas 2013
+HOA1	LIN-7
+
+# Animal strains 
+BOV_1	LIN-animal
+BOV	LIN-animal
+BOV_2	LIN-animal
+
+## Oryx strains
+ORYGIS	LIN-animal
+MUNGI	LIN-animal
+DASSIE	LIN-animal
+MICROTI	LIN-animal
+PINI	LIN-animal
+CAPRAE	LIN-animal
