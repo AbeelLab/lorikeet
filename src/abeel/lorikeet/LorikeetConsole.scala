@@ -14,6 +14,7 @@ object LorikeetConsole {
 
         case "spoligotype" => LorikeetSpoligotyper.main(args.drop(1))
         case "merge-spoligotypes" => MergeSpoligotypes.main(args.drop(1))
+        case "multi-type" => MultiTyping.main(args.drop(1))
         case "fix-lineages" => PhylogSorting.main(args.drop(1))
         case "_" => listInstructions
       }
@@ -26,6 +27,7 @@ object LorikeetConsole {
     println("Instructions:")
     println("\tspoligotype            Spoligotype BAM file based on digital spoligotyping")
     println("\tmerge-spoligotypes     Merge multiple spoligotype files together in a single file")
+    println("\tmulti-type             Merge multiple spoligotype files together in a single file, renormalizing across multiple libraries when needed.")
     println("\tfix-lineages           Fix lineage annotations based on phylogenetic tree and SNP distance matrix using a KNN classifier. ")
 
   }
