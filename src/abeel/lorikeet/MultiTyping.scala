@@ -22,7 +22,8 @@ object MultiTyping extends Tool {
   case class Config(val input: Seq[File] = Seq(),
     val output: String = null,
     val pattern: String = """.*.spoligotype""",
-    val recursive: Boolean = false)
+    val recursive: Boolean = false,
+    val minT:Int=10)
   def main(args: Array[String]): Unit = {
 
     val spacersToUse = 43
@@ -31,6 +32,7 @@ object MultiTyping extends Tool {
       opt[File]('i', "input") required () unbounded () action { (x, c) => c.copy(input = c.input :+ x) } text ("Input directory that contains all spoligotype files. You can specify multiple -i arguments")
 
       opt[String]('o', "output") required () action { (x, c) => c.copy(output = x) } text ("Output prefix")
+      opt[Int]('t',"threshold") action { (x, c) => c.copy(minT= x) } text ("Minimum threshold")
       opt[Unit]('r', "recursive") action { (x, c) => c.copy(recursive = true) } text ("Search input directories recursively [Default=true]")
       opt[String]('p', "pattern") action { (x, c) => c.copy(pattern = x) } text ("File name pattern for the input files. [Default=\".*.spoligotype]\"")
 
@@ -87,7 +89,7 @@ object MultiTyping extends Tool {
       val summed = (groups.map(_.take(43).map(l => l.split("\t")(1).toInt))).transpose.map(_.sum)
       val sorted = summed.sorted
       // threshold is 5% of 3 highest values
-      val threshold = math.max(10, (sorted(40) + sorted(41) + sorted(42)) / 60)
+      val threshold = math.max(config.minT, (sorted(40) + sorted(41) + sorted(42)) / 60)
       println(threshold)
       val binary = summed.map(f => if (f >= threshold) 1 else 0)
 
