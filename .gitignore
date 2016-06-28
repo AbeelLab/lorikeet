@@ -18,3 +18,4 @@ project/plugins/project/
 /bin
 /lorikeet-development.zip
 /.classpath
+/.cache-main
