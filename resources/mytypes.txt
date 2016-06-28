@@ -6,7 +6,7 @@
 ## Contributors: 
 ##     Joe Romano
 ##
-## Copyright 2014 (c) Thomas Abeel
+## Copyright 2014-2016 (c) Thomas Abeel
 ## 
 ## Blouin 2012 and Comas 2013 -- Deep branching Lineage 7 
 HOA1	nnnooooooooooooooooooooonnnoonnnnnnnnnnnnno
