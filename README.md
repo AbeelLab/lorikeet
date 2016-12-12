@@ -20,7 +20,7 @@ java -jar lorikeet.jar spoligotype
 
 Follow the on-screen instructions.
 
-
+Input data needs to be in BAM or SAM format
 
 
 ## Citation
