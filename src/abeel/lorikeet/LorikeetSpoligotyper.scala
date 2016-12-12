@@ -66,10 +66,10 @@ object LorikeetSpoligotyper extends Tool {
     val alignPercent = 0.9
     val pValueThreshold = 0.01
     val parser = new scopt.OptionParser[Config]("java -jar lorikeet.jar spoligotype") {
-      opt[String]('s', "spacer") action { (x, c) => c.copy(spacerFile = x) } text ("File containing spacers") 
-      opt[String]('o', "output") required () action { (x, c) => c.copy(outputFile = x) } text ("File where you want the output to be written")
-      opt[Unit]("debug") action { (x, c) => c.copy(debug = true) } text ("Show debug output")
-      arg[File]("<file>...") unbounded () required () action { (x, c) => c.copy(files = c.files :+ x) } text ("input files")
+      opt[String]('o', "output") required () action { (x, c) => c.copy(outputFile = x) } text ("Required: File where you want the output to be written")
+      opt[String]('s', "spacer") action { (x, c) => c.copy(spacerFile = x) } text ("Optional: File containing spacers.") 
+      opt[Unit]("debug") action { (x, c) => c.copy(debug = true) } text ("Optional: Show debug output.")
+      arg[File]("<file>...") unbounded () required () action { (x, c) => c.copy(files = c.files :+ x) } text ("Required: Input files. BAM or SAM format are supported.")
 
     }
     parser.parse(args, Config()) map { config =>
