@@ -17,6 +17,7 @@ object LorikeetConsole {
         case "multi-type" => MultiTyping.main(args.drop(1))
         case "fix-lineages" => PhylogSorting.main(args.drop(1))
         case "_" => listInstructions
+        case _ => listInstructions
       }
     }
 
