@@ -15,7 +15,7 @@ Download the package, unzip wherever and run.
 In the directory where you unzipped the package use the following command:
 
 ```
-java -jar lorikeet.jar spoligotype 
+java -jar lorikeet-<version>.jar spoligotype 
 ```
 
 Follow the on-screen instructions.

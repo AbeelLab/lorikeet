@@ -32,7 +32,7 @@
 
 	<property name="dist" value="${project}-${version}" />
 
-	<property name="jar" value="${project}.jar" />
+	<property name="jar" value="${project}-${version}.jar" />
 
 	<path id="build.classpath">
 
@@ -83,9 +83,13 @@
 
 		<mkdir dir="${dist}" />
 
-		<copy flatten="true" todir="${dist}/">
+		<copy todir="${dist}">
 
-			<fileset refid="jarfiles" />
+			<fileset dir=".">
+				<include name="README.md" />
+				<include name="LICENSE" />
+			</fileset>
+			
 		</copy>
 
 		<propertyfile file="${build}/tool.properties">
@@ -112,22 +116,26 @@
 			<fileset dir="resources/">
 
 				<include name="*.txt" />
+				<include name="*.fasta" />
 
 
 			</fileset>
-			
+
 
 		</copy>
 
-		<jar basedir="${build}" destfile="${dist}/${jar}">
 
+		<jar destfile="${dist}/${jar}" basedir="${build}">
+			<zipgroupfileset dir="lib/" includes="*.jar" />
+			<zipgroupfileset dir="lib_compile/scala-2.10.2/" includes="*.jar" />
 			<manifest>
+				<attribute name="Built-By" value="${user.name}" />
+				<attribute name="Main-Class" value="abeel.lorikeet.LorikeetConsole" />
 
-				<attribute name="Main-Class" value="${manifest.mainClass}" />
-
-				<attribute name="Class-Path" value="${manifest.classpath}" />
 			</manifest>
 		</jar>
+
+
 
 		<zip basedir="${dist}" destfile="${dist}.zip" />
 
