@@ -2,7 +2,7 @@
 
 Tool for digital spoligotyping of MTB strains from Illumina read data
 
-Latest version can be found: http://abeellab.org/jenkins/lorikeet/
+Latest version can be found: http://genomeview.org/jenkins/lorikeet/
 
 ## Installation
 
