@@ -2,24 +2,33 @@ package abeel.lorikeet
 
 import net.sf.samtools.SAMRecordIterator
 import net.sf.samtools.BAMFileReader
+
 import scala.collection.JavaConversions._
 import net.sf.samtools.SAMFileReader
 import java.io.File
+
 import be.abeel.util.CountMap
 import be.abeel.util.TimeInterval
 import java.io.PrintWriter
+
 import org.arabidopsis.ahocorasick.AhoCorasick
 import org.arabidopsis.ahocorasick.SearchResult
 import net.sf.jannot.utils.SequenceTools
 import net.sf.jannot.refseq.Sequence
 import net.sf.jannot.refseq.MemorySequence
+
 import scala.io.Source
 import atk.util.Tool
 import org.apache.commons.math3.distribution.PoissonDistribution
 import java.text.NumberFormat
 import java.util.Locale
+
 import org.apache.commons.math3.distribution.ExponentialDistribution
+
 import scala.util.Random
+import atk.compbio.fastq.FastQFile
+
+import scala.collection.AbstractIterator
 
 /**
  * Features:
@@ -132,8 +141,7 @@ object LorikeetSpoligotyper extends Tool {
 
       for (inputFile <- config.files) {
         pw.println("# Processing: " + inputFile)
-        /* Connect to bam file*/
-        val inputSam = new SAMFileReader(inputFile);
+        val it = SequenceIterator(inputFile)
 
         val cm = new CountMap[String]
         /* Adds pseudocounts to all markers */
@@ -142,8 +150,6 @@ object LorikeetSpoligotyper extends Tool {
           cm.count(sp)
         }
 
-        /* Iterate over bamfile */
-        val it: SAMRecordIterator = inputSam.iterator()
         var progress: Int = 0
         var totalCoverage: Long = 0
 
@@ -154,11 +160,11 @@ object LorikeetSpoligotyper extends Tool {
         while (it.hasNext()) {
           val sr = it.next()
 
-          val read = sr.getReadBases()
+          val read = sr.seq
 
-          totalCoverage += sr.getReadLength()
+          totalCoverage += sr.seq.length
 
-          val result = tree.search(read);
+          val result = tree.search(read.getBytes)
 
           for (a <- result) {
             for (s <- a.asInstanceOf[SearchResult].getOutputs()) {
@@ -180,7 +186,7 @@ object LorikeetSpoligotyper extends Tool {
         }
 
         /* close bam file */
-        it.close
+//        it.close
         /* report results */
         if (config.debug)
           pw.println("# Final count map: " + progress + "\t" + cm)
