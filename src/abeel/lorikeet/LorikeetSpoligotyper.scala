@@ -78,7 +78,7 @@ object LorikeetSpoligotyper extends Tool {
       opt[String]('o', "output") required () action { (x, c) => c.copy(outputFile = x) } text ("Required: File where you want the output to be written")
       opt[String]('s', "spacer") action { (x, c) => c.copy(spacerFile = x) } text ("Optional: File containing spacers.") 
       opt[Unit]("debug") action { (x, c) => c.copy(debug = true) } text ("Optional: Show debug output.")
-      arg[File]("<file>...") unbounded () required () action { (x, c) => c.copy(files = c.files :+ x) } text ("Required: Input files. BAM or SAM format are supported.")
+      arg[File]("<file>...") unbounded () required () action { (x, c) => c.copy(files = c.files :+ x) } text ("Required: Input files. BAM, SAM, fastq and fastq.gz format are supported.")
 
     }
     parser.parse(args, Config()) map { config =>
