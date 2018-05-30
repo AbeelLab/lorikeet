@@ -8,7 +8,7 @@ import net.sf.samtools.SAMFileReader
 import java.io.File
 
 import be.abeel.util.CountMap
-import be.abeel.util.TimeInterval
+
 import java.io.PrintWriter
 
 import org.arabidopsis.ahocorasick.AhoCorasick
@@ -29,6 +29,7 @@ import scala.util.Random
 import atk.compbio.fastq.FastQFile
 
 import scala.collection.AbstractIterator
+import atk.util.TimeInterval
 
 /**
  * Features:
